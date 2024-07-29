@@ -1,1 +1,2 @@
 node_modules
+!/milan-foleon/src/app/core/services/publication-service/

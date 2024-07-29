@@ -1,1 +1,8 @@
-<app-nx-welcome></app-nx-welcome> <router-outlet></router-outlet>
+<div class="flex flex-col h-full">
+    <foleon-header></foleon-header>
+    <div class="flex-1 min-h-screen-minus-footer-header">
+        <router-outlet></router-outlet>
+    </div>
+    <foleon-footer></foleon-footer>
+</div>
+
