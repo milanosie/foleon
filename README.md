@@ -33,7 +33,6 @@ With the limited time, some decisions made would not be acceptable in a real-wor
 
 - Nx - For additional project structure and (future) monorepo capabilities
 - Angular - For the frontend application and quick out-of-the-box setup
-- NgRx - For state management, as it is the most popular state management library for Angular and resembles Redux which is a popular state management library for React
 - Playwright - For end-to-end testing, as it is a modern and fast end-to-end testing library that is easy to use and maintain
   - For the sake of demonstration, I have added 2 very basic e2e tests with PlayWright in the e2e folder.
 - Jest - For unit testing, as it is the most popular testing library, and also the one Foleon uses.
