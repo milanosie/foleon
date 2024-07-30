@@ -17,3 +17,19 @@
 - Implement a better type safety for API responses
 - Implement a better way to store the API Client Secret
 - Implement a proper state Managmeent system, like NgRX (Redux based) with API Caching
+
+# Some key files to look at:
+
+- `src/app/core/interceptors/auth.interceptor.ts` - The interceptor that adds the token to the header
+- `src/app/core/services/authetication.service.ts` - The service that handles all the authentication and token
+  <br><br>
+- `src/app/shared/pipes/readable.pipe.ts` - The pipe that makes the API data user-friendly
+<br><br>
+- `src/app/shared/services/publication.service.ts` - The service that handles all the API requests for retrieving data
+  <br><br>
+- `src/app/shared/filter/filter.component.ts` - The filter component, to filter on Category and publication status
+- `src/app/pages/landing/landing.component.ts` - The landing page component, where the projects are displayed
+- `src/app/pages/project/project.component.ts` - The project page component, where documents from a project are displayed
+  <br><br>
+- `tailwind.config.js` - The tailwind configuration file, where I added some custom extensions
+- `src/app.config.ts` - Standalone non-module based config file for the application

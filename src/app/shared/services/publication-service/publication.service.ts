@@ -5,10 +5,11 @@ import {environment} from "../../../environments/environment";
 @Injectable({
     providedIn: 'root',
 })
+// NOTE: The authentication header is being added globally at the core level.
+// This is done by providing the AuthInterceptor in core/interceptors and core/services/authentication.service.
 export class PublicationService {
     private httpClient: HttpClient = inject(HttpClient);
     private apiUrl = environment.apiBaseUrl + '/v2';
-
 
     /**
      * Fetches the projects.
