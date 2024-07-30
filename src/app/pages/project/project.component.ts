@@ -59,7 +59,7 @@ export class ProjectComponent implements OnInit {
      * @param edition - The edition object.
      * @returns The severity of the edition.
      */
-    getSeverity(edition: any): "success" | "secondary" | "info" | "warning" | "danger" | "contrast" | undefined {
+    getSeverity(edition: any): "success" | "secondary" | "info" | "warning" | "danger" | "contrast" {
         switch (edition.status) {
             case 'published':
                 return 'success';
