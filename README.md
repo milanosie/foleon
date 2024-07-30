@@ -22,7 +22,7 @@ As a user, I want to be able to:
 ## Key Architecture Decisions
 
 For this application I have made several decisions based on the assumption that this is a real-world application that will be maintained and scaled over time. <br>
-Using NX, Playwright and NgRX in a small demo application is overkill, but I wanted to showcase how I would approach a real-world application.
+Using NX and Playwright in a small demo application is overkill, but I wanted to showcase how I would approach a real-world application.
 
 I have chosen Angular as that is the framework that I am most experienced with, which allows me to showcase the most of my skills in the shortest amount of time
 
