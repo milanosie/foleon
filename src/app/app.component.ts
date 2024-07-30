@@ -16,10 +16,15 @@ import {AuthenticationService} from "./core/services/authentication.service";
 })
 export class AppComponent {
     title = 'milan-foleon';
+    initiated = false;
 
+    /**
+     * Initializes the app component.
+     * @param authService
+     */
     constructor(authService: AuthenticationService) {
-        authService.authenticate().then((response) => {
-            console.log(response);
+        authService.authenticate().then(() => {
+            this.initiated = true;
         });
     }
 }

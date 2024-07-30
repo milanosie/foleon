@@ -1,1 +1,24 @@
-<p>landing works!</p>
+<section class="max-w-page relative mx-auto mt-3 flex flex-col gap-8 py-6 sm:px-2">
+    <h1 class="text-primary">My Foleon Projects</h1>
+    <p-floatLabel [formGroup]="searchForm">
+        <input pInputText id="search" formControlName="search"/>
+        <label for="search">Search by title...</label>
+    </p-floatLabel>
+
+    <p-orderList
+            [value]="projects$ | async"
+            [responsive]="true">
+        <ng-template let-project pTemplate="item">
+            <div class="flex flex-wrap p-2 align-items-center gap-3">
+                <a [routerLink]="[project.id]" class="flex-1 flex flex-col gap-2">
+                    <span>Project Name: <span class="font-bold">{{ project.name }}</span></span>
+                    <div class="flex align-items-center gap-2">
+                        <i class="pi pi-clock text-sm"></i>
+                        <span>Last modified: {{ project.modified_on | date }}</span>
+                    </div>
+                </a>
+            </div>
+        </ng-template>
+    </p-orderList>
+
+</section>

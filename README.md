@@ -26,13 +26,16 @@ Using NX, Playwright and NgRX in a small demo application is overkill, but I wan
 
 I have chosen Angular as that is the framework that I am most experienced with, which allows me to showcase the most of my skills in the shortest amount of time
 
-Please refer to NOTES.md for more information on the architecture and design decisions.
+### Important!
+Please refer to `NOTES.md` for more information on the architecture and design decisions. <br>
+With the limited time, some decisions made would not be acceptable in a real-world scenario.
 ### Tech Stack
 
 - Nx - For additional project structure and (future) monorepo capabilities
 - Angular - For the frontend application and quick out-of-the-box setup
 - NgRx - For state management, as it is the most popular state management library for Angular and resembles Redux which is a popular state management library for React
 - Playwright - For end-to-end testing, as it is a modern and fast end-to-end testing library that is easy to use and maintain
+  - For the sake of demonstration, I have added 2 very basic e2e tests with PlayWright in the e2e folder.
 - Jest - For unit testing, as it is the most popular testing library, and also the one Foleon uses.
 - TailwindCSS - For styling. I have chosen TailwindCSS as it is a utility-first CSS framework that is easy to use.
 
@@ -43,14 +46,15 @@ Please refer to NOTES.md for more information on the architecture and design dec
 
 - Node 20.16.0
 - NPM
+- Nx
 
 ### Installation
 
 1. Clone the repository
-2. Run `npm install` to install the dependencies
-3. Run `npm start` to start the application
+2. Install NX using `npm install -g nx`
+3. Run `npm install` to install the dependencies
+4. Run `npm start` to start the application
 
 ### Running the tests
 
 - Run `npm test` to run the unit tests
-- Run `npm run e2e` to run the end-to-end tests

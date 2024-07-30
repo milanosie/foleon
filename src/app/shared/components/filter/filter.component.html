@@ -1,0 +1,51 @@
+<div class="p-4 sm:w-full lg:w-1/2 bg-secondary">
+    <form (ngSubmit)="applyFilters()" class="space-y-4">
+        <!-- Category Filter -->
+        <div class="flex flex-col space-y-2">
+            <label for="category" class="font-semibold">Category:</label>
+            <p-dropdown
+                    id="category"
+                    [options]="categories"
+                    [(ngModel)]="filters.category"
+                    name="category"
+                    placeholder="Select Category"
+                    [style]="{'width':'100%'}"
+                    class="p-inputtext w-full"
+            ></p-dropdown>
+        </div>
+
+        <!-- Status Filter -->
+        <div class="flex flex-col space-y-2">
+            <label class="font-semibold">Status:</label>
+            <p-radioButton
+                    id="all"
+                    [(ngModel)]="filters.status"
+                    name="status"
+                    value=""
+                    inputId="all"
+                    label="All"
+                    class="p-mr-2"
+            ></p-radioButton>
+            <p-radioButton
+                    id="draft"
+                    [(ngModel)]="filters.status"
+                    name="status"
+                    value="Draft"
+                    inputId="draft"
+                    label="Draft"
+                    class="p-mr-2"
+            ></p-radioButton>
+            <p-radioButton
+                    id="published"
+                    [(ngModel)]="filters.status"
+                    name="status"
+                    value="Published"
+                    inputId="published"
+                    label="Published"
+                    class="p-mr-2"
+            ></p-radioButton>
+        </div>
+
+        <button type="submit" pButton label="Apply Filters" class="p-button p-component p-button-primary bg-primary text-secondary p-3"></button>
+    </form>
+</div>

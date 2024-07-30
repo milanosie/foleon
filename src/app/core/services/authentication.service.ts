@@ -10,6 +10,10 @@ export class AuthenticationService {
     private tokenSubject = new BehaviorSubject<string>('');
     private http = inject(HttpClient);
 
+    /**
+     * Authenticates the client and stores the token.
+     * @returns void
+     */
     async authenticate(): Promise<void> {
         const formData = new FormData();
         formData.append('grant_type', 'client_credentials');
@@ -22,17 +26,16 @@ export class AuthenticationService {
 
             const token = response.access_token;
             this.tokenSubject.next(token);
-            localStorage.setItem('access_token', token); // Store the token if needed
         } catch (error) {
             console.error('Authentication failed:', error);
         }
     }
 
+    /**
+     * Returns the current token.
+     * @returns string
+     */
     getToken(): string {
         return this.tokenSubject.value;
-    }
-
-    clearToken(): void {
-        this.tokenSubject.next('');
     }
 }

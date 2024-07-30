@@ -1,0 +1,50 @@
+<section class="max-w-page relative mx-auto mt-3 flex flex-col gap-8 py-6 sm:px-2">
+    <h1 class="text-primary">Publications in project</h1>
+    <p-floatLabel [formGroup]="searchForm">
+        <input pInputText id="search" formControlName="search"/>
+        <label for="search">Search by title...</label>
+    </p-floatLabel>
+
+    <foleon-filter (filterChange)="filterChange($event)"></foleon-filter>
+    @if (publications$ | async; as publications) {
+        <div class="card">
+            <p-dataView layout="list" emptyMessage=" " [rows]="3" paginatorPosition="both" (onPage)="pageChange($event)" [first]="(page - 1) * 3"
+                        [totalRecords]="publications.total_items" [lazy]="false" [paginator]="true">
+                <ng-template pTemplate="listItem" let-edition>
+                    <div class="grid grid-nogutter">
+                        @for (edition of publications?._embedded?.edition; let first = $first; track $index) {
+                            <div  class="col-12">
+                                <div class="flex flex-col sm:flex-row sm:align-items-center p-4 gap-3"
+                                     [ngClass]="{ 'border-top-1 surface-border': !first }">
+                                    <div class="md:w-10rem relative">
+                                        <img class="block xl:block mx-auto border-round w-full"
+                                             [src]="edition._embedded.screenshot._links.desktop.href"
+                                             [alt]="edition.name"/>
+                                        <p-tag [value]="edition.status" [severity]="getSeverity(edition)"
+                                               class="absolute" [style.left.px]="4" [style.top.px]="4"/>
+                                    </div>
+                                    <div class="flex flex-col md:flex-row justify-content-between md:align-items-center flex-1 gap-4">
+                                        <div class="flex flex-row md:flex-column justify-content-between align-items-start gap-2">
+                                            <div>
+                                                <p-chip [label]=" edition.category | readable "></p-chip>
+                                                <div class="text-lg font-medium text-900 mt-2">{{ edition.name | readable }}</div>
+                                                <div class="text-sm text-secondary">{{ edition.identifier | readable }}</div>
+                                            </div>
+                                            <div class="surface-100 p-1" style="border-radius: 30px">
+                                                <div class="surface-0 flex align-items-center gap-2 justify-content-center py-1 px-2"
+                                                     style="border-radius: 30px; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.04), 0 1px 2px 0 rgba(0, 0, 0, 0.06)">
+                                                    <span class="text-900 font-medium text-sm">Modified on: {{ edition.modified_on | date }}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </ng-template>
+            </p-dataView>
+        </div>
+    }
+
+</section>

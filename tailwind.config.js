@@ -22,7 +22,16 @@ module.exports = {
                 semiBold: '500',
                 bold: '700',
             },
-        }
+            maxWidth: {
+                'page': '1200px',
+            },
+            fontFamily: {
+                sans: ['Inter', 'sans-serif'],
+                serif: ['Georgia', 'serif'],
+            },
+        },
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/typography'),
+    ]
 };
