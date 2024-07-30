@@ -22,7 +22,7 @@ export class FilterComponent {
         {label: 'Brochure', value: 'brochure'},
         {label: 'Manual', value: 'manual'},
         {label: 'Other', value: 'other'},
-    ]; // Sample categories
+    ];
 
     public filters = {
         category: '',
